@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "device": "x86_64",
+    "torch": "2.14.1+cu130",
+    "threads": 1
+  },
+  "rows": [
+    {
+      "physics": "autograd",
+      "points": 5000,
+      "step_ms": 30.305179499919177,
+      "rel_l2": 0.22460222437695115
+    },
+    {
+      "physics": "fd/torch",
+      "points": 5120,
+      "step_ms": 7.173795000198879,
+      "rel_l2": 0.21772840507578411
+    },
+    {
+      "physics": "fd/llvm",
+      "points": 5120,
+      "step_ms": 6.633070999896518,
+      "rel_l2": 0.2177283847855477
+    }
+  ]
+}

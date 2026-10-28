@@ -1,0 +1,43 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install LLVM 18
+        run: sudo apt-get update && sudo apt-get install -y llvm-18-dev libzstd-dev libedit-dev cmake
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Python deps (CPU torch + triton for the interpreter tests)
+        run: |
+          pip install --index-url https://download.pytorch.org/whl/cpu torch
+          pip install triton numpy matplotlib pytest
+      - name: Build code generator
+        run: make build
+      - name: Test (Triton kernels run under TRITON_INTERPRET=1)
+        run: python -m pytest -q
+      - name: Codegen artifacts
+        run: |
+          python -m pinn_kernels.inspect_ir --pde heat --opt 3 --out heat_O3.ll
+          python -m pinn_kernels.inspect_ir --pde heat --emit ptx --sm sm_80 --out heat_sm80.ptx
+      - uses: actions/upload-artifact@v4
+        with:
+          name: codegen
+          path: |
+            heat_O3.ll
+            heat_sm80.ptx
+
+  docker:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build CPU image
+        run: make docker-cpu
+      - name: Run tests in container
+        run: docker run --rm pinn-kernels:cpu python -m pytest -q

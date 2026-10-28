@@ -1,0 +1,13 @@
+epoch 0 | total 0.36567 | physics 0.0056673 | ic 0.1568 | bc 0.01136 | data 0.19184 | alpha 0.01001
+epoch 2000 | total 0.0012264 | physics 0.00038484 | ic 0.00013496 | bc 2.8392e-05 | data 0.00067822 | alpha 0.043607
+epoch 4000 | total 0.00087424 | physics 0.00013757 | ic 4.262e-05 | bc 6.2345e-05 | data 0.00063171 | alpha 0.049151
+epoch 6000 | total 0.00067955 | physics 7.2133e-05 | ic 4.9241e-06 | bc 8.5479e-06 | data 0.00059394 | alpha 0.050012
+epoch 8000 | total 0.0006635 | physics 4.7286e-05 | ic 4.3017e-06 | bc 1.0153e-05 | data 0.00060176 | alpha 0.050328
+epoch 9999 | total 0.00065167 | physics 4.2037e-05 | ic 5.8909e-06 | bc 1.3452e-05 | data 0.00059029 | alpha 0.050456
+{
+  "rel_l2": 0.005406094220026735,
+  "step_ms_median": 19.13177050005288,
+  "wall_s": 201.36091392599997,
+  "alpha": 0.05045582354068756,
+  "alpha_abs_err": 0.00045582354068755826
+}

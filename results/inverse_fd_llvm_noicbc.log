@@ -1,0 +1,13 @@
+epoch 0 | total 0.19728 | physics 0.0054341 | data 0.19184 | alpha 0.01001
+epoch 2000 | total 0.0010204 | physics 0.00020157 | data 0.00081886 | alpha 0.049001
+epoch 4000 | total 0.00064494 | physics 6.2011e-05 | data 0.00058292 | alpha 0.051813
+epoch 6000 | total 0.00059586 | physics 2.8344e-05 | data 0.00056752 | alpha 0.050787
+epoch 8000 | total 0.00058655 | physics 2.1088e-05 | data 0.00056547 | alpha 0.04978
+epoch 9999 | total 0.00059531 | physics 1.6574e-05 | data 0.00057873 | alpha 0.04885
+{
+  "rel_l2": 0.13938274192104871,
+  "step_ms_median": 3.9219760001287796,
+  "wall_s": 63.14504633399997,
+  "alpha": 0.04885019361972809,
+  "alpha_abs_err": 0.0011498063802719144
+}
