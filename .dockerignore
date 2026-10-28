@@ -1,0 +1,7 @@
+build/
+pinn_kernels/_lib/
+results/
+**/__pycache__/
+.pytest_cache/
+.git/
+*.ipynb_checkpoints
